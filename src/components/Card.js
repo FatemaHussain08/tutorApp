@@ -126,7 +126,7 @@ class Card extends Component {
                               .toLowerCase()
                               .match(this.state.text.toLowerCase()) ||
                             val.expertise
-                              .toLowerCase()
+                              .toString()
                               .match(this.state.text.toLowerCase())
                           ) {
                             return val;
@@ -137,7 +137,9 @@ class Card extends Component {
                             <img className="rounded-circle center" src={img} />
                             <h5 className="name">{card.name}</h5>
                             <p className="description">{card.about_me}</p>
-                            <p className="title">Expertise:{card.expertise}</p>
+                            <p className="title">
+                              Expertise: {card.expertise.join(", ")}
+                            </p>
                             <Link to="/Details" state={card.id}>
                               <button
                                 type="button"
@@ -158,7 +160,9 @@ class Card extends Component {
                           <img className="rounded-circle center" src={img} />
                           <h5 className="name">{card.name}</h5>
                           <p className="description">{card.about_me}</p>
-                          <p className="title">Expertise:{card.expertise}</p>
+                          <p className="title">
+                            Expertise: {card.expertise.join(", ")}
+                          </p>
                           <Link to="/Details" state={card.id}>
                             <button
                               type="button"
