@@ -27,14 +27,12 @@ const Details = (props) => {
     <div>
       {value
         .filter((val) => {
-          console.log(val, state);
           if (val.id === state) {
-            console.log("hello");
             return val;
           }
         })
         .map((data) => (
-          <div>
+          <div key={data.id}>
             <img className="rounded-circle center" src={img} />
             <h1 className="name">{data.name}</h1>
             <h2 className="about">{data.about_me}</h2>
