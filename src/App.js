@@ -7,7 +7,6 @@ import Navbar from "./Navbar";
 import Maincontent from "./Maincontent";
 import Footer from "./components/Footer";
 import Card from "./components/Card";
-// import { BrowserRouter } from "react-router-dom";
 import { BrowserRouter, Route, Routes, Switch } from "react-router-dom";
 import Details from "./components/Details";
 
@@ -20,7 +19,6 @@ function App() {
         <Route path="/Home" element={<Card />} />
         <Route path="/Details" element={<Details />} />
       </Routes>
-      {/* <Card /> */}
       <Footer />
     </div>
   );
