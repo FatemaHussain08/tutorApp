@@ -127,7 +127,8 @@ class Card extends Component {
                               .match(this.state.text.toLowerCase()) ||
                             val.expertise
                               .toString()
-                              .match(this.state.text.toLowerCase())
+                              .toLowerCase()
+                              .includes(this.state.text.toLowerCase())
                           ) {
                             return val;
                           }
