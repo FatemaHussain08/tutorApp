@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import tutor from "./assets/tutor-asium.png";
+import { Link, BrowserRouter } from "react-router-dom";
 
 class Navbar extends Component {
   render() {
@@ -9,16 +10,21 @@ class Navbar extends Component {
           <div className="logo">
             <img src={tutor} alt="TUTOR-ASIUM copy.png" />
           </div>
-          <a href="#logout" style={{ fontSize: "120%" }}>
-            <i className="bi bi-power"></i>Logout
-          </a>
-          <a href="#profile" style={{ fontSize: "120%" }}>
-            <i className="bi bi-person-fill "></i>Profile
-          </a>
 
-          <a href="#home" style={{ fontSize: "120%" }}>
-            <i className="bi bi-house-fill"></i>Home
-          </a>
+          <Link to="/home" style={{ fontSize: "120%" }}>
+            <i class="bi bi-house-door-fill"></i>
+            Home
+          </Link>
+
+          <Link to="/" style={{ fontSize: "86%", paddingTop: "20px" }}>
+            <i className="bi bi-person-fill "></i>
+            Appointments
+          </Link>
+          <Link to="/Addtutor" style={{ fontSize: "120%" }}>
+            <i className="bi bi-plus"></i>
+            Add Tutor
+          </Link>
+
           <form id="form" role="search">
             <div className="input-group">
               <input

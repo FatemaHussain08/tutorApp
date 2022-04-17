@@ -87,7 +87,8 @@ color: black;
     max-height: 450px;
     /* background-size: cover; */
     background-position: center;
-    width: 800px;
+    width: 500px;
+    margin: 0%;
 }
 
 .text-slides{
@@ -118,4 +119,10 @@ color: black;
     margin-top: -4%;
     padding: 0;
     margin-left: -50%;
+    border: 0;
 }
+
+
+
+
+

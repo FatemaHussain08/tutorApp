@@ -31,8 +31,9 @@ class Card extends Component {
     this.handleClick = this.handleClick.bind(this);
     this.updateBack = this.updateBack.bind(this);
   }
+
   componentDidMount() {
-    fetch("tutors.json", {
+    fetch("http://localhost:3000/tutors", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -134,14 +135,15 @@ class Card extends Component {
                           }
                         })
                         .map((card) => (
-                          <div className="card" key={card.id}>
+                          <div className="card" key={card._id}>
                             <img className="rounded-circle center" src={img} />
                             <h5 className="name">{card.name}</h5>
                             <p className="description">{card.about_me}</p>
                             <p className="title">
-                              Expertise: {card.expertise.join(", ")}
+                              Expertise:
+                              {card.expertise}
                             </p>
-                            <Link to="/Details" state={card.id}>
+                            <Link to="/Details" state={card._id}>
                               <button
                                 type="button"
                                 className="btn btn-outline-primary"
@@ -157,14 +159,15 @@ class Card extends Component {
                   {this.state.text === "" && (
                     <Slider {...this.sliderSettings}>
                       {this.state.tutors.map((card) => (
-                        <div className="card" key={card.id}>
+                        <div className="card" key={card._id}>
                           <img className="rounded-circle center" src={img} />
                           <h5 className="name">{card.name}</h5>
                           <p className="description">{card.about_me}</p>
                           <p className="title">
-                            Expertise: {card.expertise.join(", ")}
+                            Expertise:
+                            {card.expertise}
                           </p>
-                          <Link to="/Details" state={card.id}>
+                          <Link to="/Details" state={card._id}>
                             <button
                               type="button"
                               className="btn btn-outline-primary"
