@@ -43,7 +43,10 @@ class Appointment extends Component {
             },
           })
             .then((response) => response.json())
-            .then((json) => console.log(json))
+            .then((json) => {
+              console.log(json);
+              alert("Booking confirmed");
+            })
             .catch(console.log);
         }
       })
