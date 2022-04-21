@@ -41,7 +41,7 @@ const Edit = (props) => {
         marginLeft: "450px",
         background: "hsla(0, 0%, 100%, 0.8)",
         backdropFilter: "blur(30px)",
-        height: "500px",
+        height: "540px",
         backgroundImage:
           "url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/015.webp')",
       }}

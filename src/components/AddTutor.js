@@ -37,9 +37,8 @@ class AddTutor extends Component {
           marginLeft: "450px",
           background: "hsla(0, 0%, 100%, 0.8)",
           backdropFilter: "blur(30px)",
-          height: "500px",
-          backgroundImage:
-            "url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/015.webp')",
+          height: "540px",
+          backgroundColor: "black",
         }}
       >
         <div className="card-body p-md-3">
@@ -52,7 +51,6 @@ class AddTutor extends Component {
                 Add Tutor
               </h2>
               <form>
-                {/* <!-- 2 column grid layout with text inputs for the first and last names --> */}
                 <div className="row">
                   <div className="mb-4 px-0" style={{ marginTop: "10px" }}>
                     <div className="form-outline">

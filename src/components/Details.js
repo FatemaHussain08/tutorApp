@@ -17,6 +17,7 @@ const Details = (props) => {
         console.log(data);
         console.log(value);
       })
+
       .catch(console.log);
   }, []);
 
@@ -28,13 +29,12 @@ const Details = (props) => {
         "Content-type": "application/json",
       },
     })
-      // Converting received data to JSON
       .then((response) => response.json())
       .then((json) => console.log(json));
   };
 
   return (
-    <div key={value._id}>
+    <div key={value._id} style={{ backgroundColor: "white" }}>
       <img className="rounded-circle center" src={img} />
       <h1 className="name">{value.name}</h1>
       <h2 className="about">{value.about_me}</h2>
@@ -46,7 +46,7 @@ const Details = (props) => {
         <button
           type="button"
           className="btn btn-outline-primary"
-          style={{ marginRight: "20px", marginLeft: "10px" }}
+          style={{ marginRight: "20px", marginLeft: "" }}
         >
           Back
         </button>
@@ -65,6 +65,7 @@ const Details = (props) => {
         onClick={handleClick}
         type="button"
         className="btn btn-outline-primary"
+        style={{ marginRight: "20px" }}
       >
         Delete
       </button>

@@ -16,7 +16,10 @@ class Navbar extends Component {
             Home
           </Link>
 
-          <Link to="/" style={{ fontSize: "86%", paddingTop: "20px" }}>
+          <Link
+            to="/ShowAppointments"
+            style={{ fontSize: "86%", paddingTop: "20px" }}
+          >
             <i className="bi bi-person-fill "></i>
             Appointments
           </Link>

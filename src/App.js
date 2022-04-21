@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "./homepage.css";
-import "./card.css";
 import "./components/addTutor.css";
 import "./components/details.css";
+import "./components/Appointment.css";
 import Navbar from "./Navbar";
 import Maincontent from "./Maincontent";
 import Footer from "./components/Footer";
@@ -20,12 +20,14 @@ import {
 } from "react-router-dom";
 import { Fragment } from "react";
 import Edit from "./components/Edit";
+import Appointment from "./components/Appointment";
+import ShowAppointments from "./components/ShowAppointments";
+import AppointmentDetail from "./components/AppointmentDetail";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <Maincontent /> */}
       <Routes>
         <Route
           path="/Home"
@@ -37,10 +39,12 @@ function App() {
           }
         />
         <Route path="/Addtutor" element={<AddTutor />} />
-        {/* <Route path="/Home" element={<Card />} /> */}
         <Route path="/" element={<Navigate replace to="/Home" />} />
         <Route path="/Details" element={<Details />} />
         <Route path="/Edit" element={<Edit />} />
+        <Route path="/Appointment" element={<Appointment />} />
+        <Route path="/ShowAppointments" element={<ShowAppointments />} />
+        <Route path="/AppointmentDetail" element={<AppointmentDetail />} />
       </Routes>
       <Footer />
     </div>

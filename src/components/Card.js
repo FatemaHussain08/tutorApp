@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import img from "../assets/people.png";
 import Details from "../components/Details";
 import { Link, BrowserRouter } from "react-router-dom";
+import styles from "/Users/fatemahussain/Desktop/tutorapp/src/card.css";
 
 class Card extends Component {
   constructor(props) {
@@ -42,7 +43,6 @@ class Card extends Component {
       .then((res) => res.json())
       .then((data) => {
         this.setState({ tutors: data });
-        // console.log(this.state.tutors);
       })
       .catch(console.log);
   }
@@ -55,10 +55,8 @@ class Card extends Component {
   handleClick = (card_id) => {
     console.log(this.state.tutors);
 
-    // console.log(card_id);
     this.setState({ clicked: true });
-    // console.log(this.state.clicked);
-    // data = this.state.tutors.find((data) => data.id === card_id);
+
     console.log(
       this.state.tutors.find((obj) => obj.id.toString() == card_id.toString())
     );
@@ -72,26 +70,16 @@ class Card extends Component {
         console.log(this.state.obj);
       }
     );
-
-    // this.setState({
-    //   obj: this.state.tutors.find(
-    //     (obj1) => obj1.id.toString() == card_id.toString()
-    //   ),
-    // });
-    // // console.log(typeof this.state.obj);
-    // // console.log(card_id);
-    // console.log(this.state.obj);
   };
 
   updateBack = (state) => {
     this.setState({ active: state });
     console.log(this.state.active);
-    // <Card />;
   };
 
   render() {
     return (
-      <div>
+      <div className={styles.root}>
         <div className="team-boxed">
           <br />
           <div className="topnav_card container-fluid">
@@ -151,6 +139,15 @@ class Card extends Component {
                                 About Me
                               </button>
                             </Link>
+
+                            <Link to="/Appointment" state={card._id}>
+                              <button
+                                type="button"
+                                className="btn btn-outline-primary"
+                              >
+                                Book appointment
+                              </button>
+                            </Link>
                           </div>
                         ))}
                     </Slider>
@@ -171,8 +168,17 @@ class Card extends Component {
                             <button
                               type="button"
                               className="btn btn-outline-primary"
+                              style={{ marginRight: "30px" }}
                             >
                               About Me
+                            </button>
+                          </Link>
+                          <Link to="/Appointment" state={card._id}>
+                            <button
+                              type="button"
+                              className="btn btn-outline-primary"
+                            >
+                              Book appointment
                             </button>
                           </Link>
                         </div>
