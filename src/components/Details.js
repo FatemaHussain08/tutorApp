@@ -3,11 +3,14 @@ import { useState } from "react";
 import img from "../assets/people.png";
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import { Redirect } from "react-router";
+import { useNavigate } from "react-router-dom";
 
 const Details = (props) => {
   const location = useLocation();
   const state = location.state;
   const [value, setValue] = useState([]);
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     fetch("http://localhost:3000/tutors/" + state)
@@ -32,6 +35,7 @@ const Details = (props) => {
       .then((response) => response.json())
       .then((json) => {
         console.log(json);
+        navigate("/Home");
         alert("Tutor deleted");
       });
   };
@@ -41,9 +45,7 @@ const Details = (props) => {
       <img className="rounded-circle center" src={img} />
       <h1 className="name">{value.name}</h1>
       <h2 className="about">{value.about_me}</h2>
-      <p className="title">
-        Expertise:{value.expertise && value.expertise.join(", ")}
-      </p>
+      <p className="title">Expertise:{value.expertise && value.expertise}</p>
       <p className="yrs">Years of Experience: {value.experience}</p>
       <Link to="/Home">
         <button

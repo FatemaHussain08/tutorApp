@@ -135,6 +135,7 @@ class Card extends Component {
                               <button
                                 type="button"
                                 className="btn btn-outline-primary"
+                                style={{ marginRight: "30px" }}
                               >
                                 About Me
                               </button>
